@@ -1,0 +1,99 @@
+.bodyDictionary {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.searchBox {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    padding: 0 20px;
+    border-radius: 5%;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.searchBox input {
+    width: 200px;
+    height: 50px;
+    border: none;
+    background-color: inherit;
+    font-size: medium;
+}
+
+.searchBox input:focus {
+    outline: none;
+}
+
+.searchBox input::placeholder {
+    opacity: .3;
+}
+
+.searchBox button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.searchBox button svg {
+    opacity: .3;
+}
+
+.searchBox button:hover svg{
+    opacity: 1;
+}
+
+.wordBox {
+    max-width: 600px;
+    margin: 20px;
+    padding: 0 20px;
+    border-radius: 2%;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.wordBox .errorBox {
+    margin-bottom: 10px;
+    font-size: medium;
+}
+
+.wordTitle {
+    max-height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: large;
+}
+
+.wordTitle button {
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+}
+
+.wordMeanings ul {
+    margin-top: 10px;
+    padding-left: 0;
+    font-size: medium;
+}
+
+.wordMeanings li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.wordMeanings .liNumber {
+    opacity: 0.5;
+    margin-right: 5px;
+    font-size: medium;
+}
+
+.wordMeanings .wordExample {
+    opacity: 0.6;
+    display: block;
+    font-style: italic;
+}
