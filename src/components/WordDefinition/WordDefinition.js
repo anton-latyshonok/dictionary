@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import "./WordDefinition.css";
 import ClipLoader from "react-spinners/ClipLoader";
@@ -9,6 +9,8 @@ const WordDefinition = () => {
     const [newWord, setNewWord] = useState("");
     const [loading, setLoading] = useState(false);
     const [data, setData] = useState({ error: false, response: null });
+    const audio = useRef();
+
 
     useEffect(() => {
         setLoading(true);
@@ -33,8 +35,7 @@ const WordDefinition = () => {
     };
 
     const playAudio = () => {
-        const audio = document.querySelector("#audio");
-        audio.play();
+        audio.current.play();
     };
 
     return (
@@ -72,7 +73,7 @@ const WordDefinition = () => {
                                         [{data.response[0]?.phonetics[0].text}]
                                     </span>
                                     {data.response &&
-                                    <audio id="audio">
+                                    <audio ref={audio} id="audio">
                                         <source src={data.response[0].phonetics[0].audio}/>
                                     </audio>
                                     }
